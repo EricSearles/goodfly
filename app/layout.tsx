@@ -23,6 +23,11 @@ const sora = Sora({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  icons: {
+    icon: [{ url: "/images/icone.png", type: "image/png" }],
+    shortcut: ["/images/icone.png"],
+    apple: [{ url: "/images/icone.png", type: "image/png" }]
+  },
   ...buildMetadata({
     title: "Good Fly Aviação Executiva | Soluções Aéreas sob Demanda",
     description: siteConfig.description,

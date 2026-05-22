@@ -6,8 +6,8 @@ export const siteConfig = {
   description:
     "Site institucional da Good Fly para agenciamento de voos executivos, táxi aéreo, UTI aérea, transporte de órgãos e soluções aéreas especiais com atendimento 24 horas em todo o Brasil.",
   url: "https://www.goodfly.com.br",
-  whatsappDisplay: "11 93000-0000",
-  whatsappHref: "https://wa.me/5511930000000",
+  whatsappDisplay: "11 93111-1111",
+  whatsappHref: "https://wa.me/5511931111111",
   whatsappBaseMessage:
     "Olá, gostaria de solicitar uma cotação com a Good Fly.",
   email: "contato@goodfly.com.br",

@@ -42,7 +42,23 @@ export type AircraftDocument = {
 };
 
 // Estrutura reservada para futura integração com API Laravel.
-// Nesta primeira versão, o site permanece estático e a conversão ocorre via WhatsApp.
-export async function submitQuoteLead(_payload: QuoteLeadPayload) {
-  throw new Error("Integração com Laravel API ainda não implementada.");
+// Enquanto isso, o site usa uma rota interna do Next.js para encaminhar o lead por e-mail.
+export async function submitQuoteLead(payload: QuoteLeadPayload) {
+  const response = await fetch("/api/quote", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(payload)
+  });
+
+  const result = (await response.json().catch(() => null)) as
+    | { error?: string; success?: boolean }
+    | null;
+
+  if (!response.ok) {
+    throw new Error(result?.error ?? "Nao foi possivel enviar sua solicitacao agora.");
+  }
+
+  return result;
 }

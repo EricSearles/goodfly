@@ -51,7 +51,24 @@ O projeto já está organizado para receber:
 - cadastro de aeronaves
 - upload de documentos
 
-Hoje o envio de cotação é feito por WhatsApp para manter a primeira versão leve e estática.
+Hoje o formulário de contato pode encaminhar solicitações por e-mail usando uma rota interna do Next.js.
+
+## Configuracao do envio por e-mail
+
+Para o formulário de contato encaminhar as solicitações por e-mail, crie um arquivo `.env.local`
+com base em `.env.example` e preencha as credenciais SMTP:
+
+```bash
+GOODFLY_SMTP_HOST=smtp.seuprovedor.com
+GOODFLY_SMTP_PORT=587
+GOODFLY_SMTP_SECURE=false
+GOODFLY_SMTP_USER=contato@goodfly.com.br
+GOODFLY_SMTP_PASS=sua_senha_smtp
+GOODFLY_SMTP_FROM="Good Fly <contato@goodfly.com.br>"
+GOODFLY_CONTACT_RECIPIENT=contato@goodfly.com.br
+```
+
+Sem essas variáveis, o formulário vai falhar de forma controlada ao tentar enviar.
 
 ## Publicação na DigitalOcean com Nginx
 

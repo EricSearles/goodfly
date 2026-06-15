@@ -2,7 +2,8 @@
 
 import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/Button";
-import { buildQuoteMessage, buildWhatsAppUrl } from "@/lib/utils";
+import { submitQuoteLead } from "@/lib/future-integrations";
+import { siteConfig } from "@/lib/site";
 
 type QuoteFormState = {
   nome: string;
@@ -43,6 +44,11 @@ const requiredFields: Array<keyof QuoteFormState> = [
 export function QuoteForm() {
   const [formData, setFormData] = useState(initialState);
   const [attemptedSubmit, setAttemptedSubmit] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [feedback, setFeedback] = useState<{
+    tone: "success" | "error";
+    message: string;
+  } | null>(null);
 
   const hasErrors = useMemo(
     () => requiredFields.some((field) => formData[field].trim().length === 0),
@@ -56,29 +62,48 @@ export function QuoteForm() {
     }));
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setAttemptedSubmit(true);
+    setFeedback(null);
 
     if (hasErrors) {
       return;
     }
 
-    // Estrutura pronta para futura integração com API Laravel antes do disparo para WhatsApp.
-    const message = buildQuoteMessage({
-      "Nome:": formData.nome,
-      "WhatsApp:": formData.whatsapp,
-      "E-mail:": formData.email,
-      "Origem:": formData.origem,
-      "Destino:": formData.destino,
-      "Data:": formData.data,
-      "Horário:": formData.horario,
-      "Passageiros:": formData.passageiros,
-      "Tipo de missão:": formData.tipoMissao,
-      "Observações:": formData.observacoes
-    });
+    setIsSubmitting(true);
 
-    window.open(buildWhatsAppUrl(message), "_blank", "noopener,noreferrer");
+    try {
+      await submitQuoteLead({
+        name: formData.nome.trim(),
+        whatsapp: formData.whatsapp.trim(),
+        email: formData.email.trim(),
+        origin: formData.origem.trim(),
+        destination: formData.destino.trim(),
+        flightDate: formData.data,
+        preferredTime: formData.horario.trim(),
+        passengers: Number(formData.passageiros),
+        missionType: formData.tipoMissao.trim(),
+        notes: formData.observacoes.trim()
+      });
+
+      setFormData(initialState);
+      setAttemptedSubmit(false);
+      setFeedback({
+        tone: "success",
+        message: "Solicitacao enviada por e-mail com sucesso. Nossa equipe retorna em breve."
+      });
+    } catch (error) {
+      setFeedback({
+        tone: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Nao foi possivel enviar sua solicitacao agora."
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -170,17 +195,33 @@ export function QuoteForm() {
       </div>
       {attemptedSubmit && hasErrors && (
         <p className="mt-4 text-sm text-red-600">
-          Preencha os campos obrigatórios para abrir a cotação no WhatsApp.
+          Preencha os campos obrigatorios para enviar a solicitacao por e-mail.
+        </p>
+      )}
+      {feedback && (
+        <p
+          className={`mt-4 text-sm ${
+            feedback.tone === "success" ? "text-emerald-700" : "text-red-600"
+          }`}
+        >
+          {feedback.message}
         </p>
       )}
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-        <Button type="submit">Solicitar cotação no WhatsApp</Button>
+        <Button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Enviando..." : "Enviar solicitacao por e-mail"}
+        </Button>
+        <Button href={siteConfig.whatsappHref} variant="whatsapp">
+          Falar no WhatsApp
+        </Button>
         <Button
           type="button"
           variant="secondary"
+          disabled={isSubmitting}
           onClick={() => {
             setFormData(initialState);
             setAttemptedSubmit(false);
+            setFeedback(null);
           }}
         >
           Limpar campos

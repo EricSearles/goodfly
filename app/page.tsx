@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Clock3, Globe2, ShieldCheck } from "lucide-react";
 import { CTASection } from "@/components/sections/CTASection";
+import { AircraftShowcase } from "@/components/sections/AircraftShowcase";
 import { FAQ } from "@/components/sections/FAQ";
 import { Hero } from "@/components/sections/Hero";
 import { QuickQuoteBar } from "@/components/sections/QuickQuoteBar";
@@ -105,7 +106,7 @@ export default function HomePage() {
           <SectionTitle
             eyebrow="Soluções aéreas sob demanda"
             title="Serviços estratégicos para missões executivas, especiais e urgentes"
-            description="Cards objetivos, navegação simples e páginas internas preparadas para aprofundar cada tipo de atendimento da Good Fly."
+            description="Conheça os principais serviços aéreos coordenados pela Good Fly para missões executivas, especiais e urgentes."
           />
           <div className="mt-10">
             <ServicesGrid services={featuredServices} />
@@ -113,12 +114,13 @@ export default function HomePage() {
         </Container>
       </section>
 
+      <AircraftShowcase />
+
       <section className="py-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1fr_1.05fr] lg:items-center">
             <div>
               <SectionTitle
-                eyebrow="Institucional"
                 title="Agenciamento aéreo com atendimento imediato"
                 description="A Good Fly atua na intermediação e coordenação de soluções aéreas sob demanda, conectando clientes a aeronaves adequadas para cada missão, com atendimento imediato, suporte 24 horas e foco em segurança, agilidade e discrição."
               />

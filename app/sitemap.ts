@@ -1,11 +1,17 @@
 import type { MetadataRoute } from "next";
+import { getAircraftByCategory } from "@/data/aircraft";
 import { services } from "@/data/services";
 import { siteConfig } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const helicopters = getAircraftByCategory("helicopteros");
+  const airplanes = getAircraftByCategory("avioes");
+
   const staticRoutes = [
     "",
     "/aeronaves",
+    "/aeronaves/helicopteros",
+    "/aeronaves/avioes",
     "/sobre",
     "/contato"
   ].map((path) => ({
@@ -22,5 +28,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9
   }));
 
-  return [...staticRoutes, ...serviceRoutes];
+  const helicopterRoutes = helicopters.map((aircraft) => ({
+    url: `${siteConfig.url}/aeronaves/helicopteros/${aircraft.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.75
+  }));
+
+  const airplaneRoutes = airplanes.map((aircraft) => ({
+    url: `${siteConfig.url}/aeronaves/avioes/${aircraft.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.75
+  }));
+
+  return [
+    ...staticRoutes,
+    ...serviceRoutes,
+    ...helicopterRoutes,
+    ...airplaneRoutes
+  ];
 }

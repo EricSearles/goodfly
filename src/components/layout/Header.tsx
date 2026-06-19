@@ -13,6 +13,10 @@ const serviceMenuItems = services.filter(
   (service) => service.slug !== "agregue-sua-aeronave"
 );
 
+function getServiceHref(slug: string) {
+  return slug === "helicopteros" ? "/aeronaves/helicopteros" : `/${slug}`;
+}
+
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -45,7 +49,7 @@ export function Header() {
                           {serviceMenuItems.map((service) => (
                             <Link
                               key={service.slug}
-                              href={`/${service.slug}`}
+                              href={getServiceHref(service.slug)}
                               className="rounded-2xl border border-transparent px-4 py-3 text-sm font-medium text-brand-950 transition hover:border-line hover:bg-muted-50"
                             >
                               {service.navTitle}
@@ -103,7 +107,7 @@ export function Header() {
                           {serviceMenuItems.map((service) => (
                             <Link
                               key={service.slug}
-                              href={`/${service.slug}`}
+                              href={getServiceHref(service.slug)}
                               className="block rounded-2xl bg-muted-50 px-4 py-3 text-sm text-brand-950"
                               onClick={() => setMenuOpen(false)}
                             >

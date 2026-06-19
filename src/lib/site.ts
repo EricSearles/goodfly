@@ -27,7 +27,7 @@ export const mainNavigation = [
 export const footerNavigation = [
   { label: "Início", href: "/" },
   { label: "Voos Executivos", href: "/voos-executivos" },
-  { label: "Helicópteros", href: "/helicopteros" },
+  { label: "Helicópteros", href: "/aeronaves/helicopteros" },
   { label: "UTI Aérea", href: "/uti-aerea" },
   { label: "Logística Aérea", href: "/logistica-aerea" },
   { label: "Compra e Venda", href: "/compra-e-venda-de-aeronaves" },

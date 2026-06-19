@@ -7,6 +7,11 @@ type ServiceCardProps = {
 };
 
 export function ServiceCard({ service }: ServiceCardProps) {
+  const href =
+    service.slug === "helicopteros"
+      ? "/aeronaves/helicopteros"
+      : `/${service.slug}`;
+
   return (
     <article className="group flex h-full flex-col rounded-[28px] border border-line/80 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg">
       <ServiceIcon name={service.icon} />
@@ -15,7 +20,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
       </h3>
       <p className="mt-3 flex-1 text-sm leading-7 text-muted-600">{service.summary}</p>
       <Link
-        href={`/${service.slug}`}
+        href={href}
         className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-900 transition group-hover:text-gold-500"
       >
         Saiba mais

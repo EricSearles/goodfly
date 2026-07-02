@@ -57,7 +57,7 @@ export async function submitQuoteLead(payload: QuoteLeadPayload) {
     | null;
 
   if (!response.ok) {
-    throw new Error(result?.error ?? "Nao foi possivel enviar sua solicitacao agora.");
+    throw new Error(result?.error ?? "Não foi possível enviar sua solicitação agora.");
   }
 
   return result;

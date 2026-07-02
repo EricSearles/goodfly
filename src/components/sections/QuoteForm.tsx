@@ -91,7 +91,7 @@ export function QuoteForm() {
       setAttemptedSubmit(false);
       setFeedback({
         tone: "success",
-        message: "Solicitacao enviada por e-mail com sucesso. Nossa equipe retorna em breve."
+        message: "Solicitação enviada por e-mail com sucesso. Nossa equipe retorna em breve."
       });
     } catch (error) {
       setFeedback({
@@ -99,7 +99,7 @@ export function QuoteForm() {
         message:
           error instanceof Error
             ? error.message
-            : "Nao foi possivel enviar sua solicitacao agora."
+            : "Não foi possível enviar sua solicitação agora."
       });
     } finally {
       setIsSubmitting(false);
@@ -195,7 +195,7 @@ export function QuoteForm() {
       </div>
       {attemptedSubmit && hasErrors && (
         <p className="mt-4 text-sm text-red-600">
-          Preencha os campos obrigatorios para enviar a solicitacao por e-mail.
+          Preencha os campos obrigatórios para enviar a solicitação por e-mail.
         </p>
       )}
       {feedback && (
@@ -209,7 +209,7 @@ export function QuoteForm() {
       )}
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
         <Button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? "Enviando..." : "Enviar solicitacao por e-mail"}
+          {isSubmitting ? "Enviando..." : "Enviar solicitação por e-mail"}
         </Button>
         <Button href={siteConfig.whatsappHref} variant="whatsapp">
           Falar no WhatsApp

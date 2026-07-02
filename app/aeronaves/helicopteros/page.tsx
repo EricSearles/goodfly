@@ -16,7 +16,7 @@ export const metadata: Metadata = buildMetadata({
     "Operações especiais",
     "Good Fly"
   ],
-  image: "/images/helicoptero-executivo.jpg"
+  image: "/images/aeronaves/helicopteros/helicoptero-bell-429-img-1.jpg"
 });
 
 export default function HelicopterosPage() {

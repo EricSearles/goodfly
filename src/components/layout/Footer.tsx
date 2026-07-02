@@ -9,7 +9,7 @@ export function Footer() {
       <Container>
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">
           <div>
-            <Logo light />
+            <Logo compact />
             <p className="mt-5 max-w-xl text-sm leading-7 text-white/76">
               A Good Fly atua na intermediação e coordenação de soluções aéreas
               sob demanda, conectando clientes a aeronaves adequadas para cada
@@ -17,7 +17,9 @@ export function Footer() {
             </p>
           </div>
           <div>
-            <h3 className="font-heading text-lg font-semibold text-white">Serviços e navegação</h3>
+            <h3 className="font-heading text-lg font-semibold text-white">
+              Serviços e navegação
+            </h3>
             <div className="mt-5 grid gap-3">
               {footerNavigation.map((item) => (
                 <Link

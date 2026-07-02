@@ -15,7 +15,7 @@ export const metadata: Metadata = buildMetadata({
     "Galeria de aeronaves",
     "Aviação executiva"
   ],
-  image: "/images/catalogo-good-fly.jpg"
+  image: "/images/aeronaves/avioes/avioes-lear-45-img-4.jpg"
 });
 
 const categories = [
@@ -45,8 +45,8 @@ export default function AeronavesPage() {
       <InternalHero
         title="Aeronaves"
         subtitle="Conheça algumas opções de aeronaves disponíveis para operações especiais, traslados e demandas sob solicitação."
-        image="/images/catalogo-good-fly.jpg"
-        imageAlt="Catálogo institucional Good Fly com foco em aeronaves"
+        image="/images/aeronaves/avioes/avioes-lear-45-img-4.jpg"
+        imageAlt="Aeronave executiva em destaque na galeria da Good Fly"
         breadcrumbItems={[
           { label: "Início", href: "/" },
           { label: "Aeronaves" }

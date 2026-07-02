@@ -21,9 +21,9 @@ export default function SobrePage() {
     <>
       <InternalHero
         title="Sobre a Good Fly"
-        subtitle="Uma empresa voltada para intermediação e coordenação de soluções aéreas sob demanda, com atendimento ágil, posicionamento responsável e foco em experiências premium."
-        image="/images/catalogo-good-fly.jpg"
-        imageAlt="Catálogo Good Fly em mesa com atmosfera premium"
+        subtitle="Intermediação e coordenação de soluções aéreas sob demanda, com atendimento ágil em todo o Brasil."
+        image="/images/aeronaves/avioes/avioes-jato-legacy-650-img-1.jpg"
+        imageAlt="Aeronave executiva da Good Fly em destaque"
         breadcrumbItems={[
           { label: "Início", href: "/" },
           { label: "Sobre" }
@@ -41,22 +41,20 @@ export default function SobrePage() {
                 description={siteConfig.legalPositioning}
               />
               <p className="mt-6 max-w-3xl text-base leading-8 text-muted-600">
-                A Good Fly nasceu para atender clientes que precisam de uma
-                resposta aérea rápida e bem coordenada. Em vez de prometer uma
-                operação própria onde isso não está formalmente apresentado, o
-                site posiciona a empresa de forma correta: como parceira na
-                intermediação, análise e conexão com operadores autorizados.
+                A Good Fly atende clientes que precisam de resposta rápida e
+                coordenação eficiente, conectando cada missão a operadores e
+                aeronaves compatíveis com a necessidade do voo.
               </p>
             </div>
             <div className="rounded-[32px] border border-line/80 bg-white p-8 shadow-sm">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-900">
-                Como a Good Fly se apresenta
+                Atendimento
               </p>
               <div className="mt-6 space-y-4 text-sm leading-7 text-muted-600">
-                <p>Atendimento consultivo 24 horas.</p>
-                <p>Intermediação de voos e soluções especiais sob demanda.</p>
-                <p>Conexão com operadores homologados conforme a missão.</p>
-                <p>Informação correta antes da contratação.</p>
+                <p>Voos executivos e helicópteros.</p>
+                <p>UTI aérea e operações especiais.</p>
+                <p>Logística aérea e transporte urgente.</p>
+                <p>Gestão, compra e venda de aeronaves.</p>
               </div>
             </div>
           </div>
@@ -68,7 +66,7 @@ export default function SobrePage() {
           <SectionTitle
             eyebrow="Diretrizes de atendimento"
             title="Três pilares para orientar cada missão"
-            description="Estrutura pensada para manter o posicionamento premium sem perder objetividade comercial."
+            description="Pontos centrais para analisar cada solicitação."
           />
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             <ContactCard icon={<TimerReset className="h-5 w-5" />} title="Agilidade">
@@ -89,7 +87,7 @@ export default function SobrePage() {
 
       <CTASection
         title="Quer falar com uma equipe que entende operações sob demanda?"
-        description="A Good Fly atende clientes corporativos, missões especiais e proprietários de aeronaves com postura consultiva e comunicação direta."
+        description="A Good Fly atende clientes corporativos, missões especiais e proprietários de aeronaves com comunicação direta."
         primaryLabel="Entrar em contato"
         primaryHref="/contato"
         secondaryLabel="WhatsApp 24h"

@@ -30,8 +30,8 @@ type QuoteLeadPayload = {
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const clientErrors = new Set([
-  "Preencha os campos obrigatorios do formulario.",
-  "Informe um e-mail valido."
+  "Preencha os campos obrigatórios do formulário.",
+  "Informe um e-mail válido."
 ]);
 
 export const runtime = "nodejs";
@@ -40,7 +40,7 @@ function getRequiredEnv(name: string) {
   const value = process.env[name]?.trim();
 
   if (!value) {
-    throw new Error(`Variavel de ambiente ausente: ${name}`);
+    throw new Error(`Variável de ambiente ausente: ${name}`);
   }
 
   return value;
@@ -77,11 +77,11 @@ function parsePayload(body: QuoteLeadRequest): QuoteLeadPayload {
     !Number.isFinite(payload.passengers) ||
     payload.passengers <= 0
   ) {
-    throw new Error("Preencha os campos obrigatorios do formulario.");
+    throw new Error("Preencha os campos obrigatórios do formulário.");
   }
 
   if (payload.email && !emailPattern.test(payload.email)) {
-    throw new Error("Informe um e-mail valido.");
+    throw new Error("Informe um e-mail válido.");
   }
 
   return payload;
@@ -89,18 +89,18 @@ function parsePayload(body: QuoteLeadRequest): QuoteLeadPayload {
 
 function formatEmailBody(payload: QuoteLeadPayload) {
   const lines = [
-    "Nova solicitacao de cotacao recebida pelo site Good Fly.",
+    "Nova solicitação de cotação recebida pelo site Good Fly.",
     "",
     `Nome: ${payload.name}`,
     `WhatsApp: ${payload.whatsapp}`,
-    `E-mail: ${payload.email || "Nao informado"}`,
+    `E-mail: ${payload.email || "Não informado"}`,
     `Origem: ${payload.origin}`,
     `Destino: ${payload.destination}`,
     `Data do voo: ${payload.flightDate}`,
-    `Horario desejado: ${payload.preferredTime || "Nao informado"}`,
+    `Horário desejado: ${payload.preferredTime || "Não informado"}`,
     `Passageiros: ${payload.passengers}`,
-    `Tipo de missao: ${payload.missionType}`,
-    `Observacoes: ${payload.notes || "Nao informado"}`
+    `Tipo de missão: ${payload.missionType}`,
+    `Observações: ${payload.notes || "Não informado"}`
   ];
 
   return lines.join("\n");
@@ -120,7 +120,7 @@ export async function POST(request: Request) {
     const secure = process.env.GOODFLY_SMTP_SECURE === "true";
 
     if (!Number.isFinite(port)) {
-      throw new Error("Variavel de ambiente invalida: GOODFLY_SMTP_PORT");
+      throw new Error("Variável de ambiente inválida: GOODFLY_SMTP_PORT");
     }
 
     const transporter = nodemailer.createTransport({
@@ -136,7 +136,7 @@ export async function POST(request: Request) {
     await transporter.sendMail({
       from,
       to,
-      subject: `Nova solicitacao de cotacao - ${payload.missionType}`,
+      subject: `Nova solicitação de cotação - ${payload.missionType}`,
       replyTo: payload.email || undefined,
       text: formatEmailBody(payload)
     });
@@ -146,7 +146,7 @@ export async function POST(request: Request) {
     const message =
       error instanceof Error
         ? error.message
-        : "Nao foi possivel enviar a solicitacao agora.";
+        : "Não foi possível enviar a solicitação agora.";
 
     const status = clientErrors.has(message) ? 400 : 500;
 

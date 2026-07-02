@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import type { ServiceContent } from "@/data/services";
 import { ServiceIcon } from "@/components/ui/ServiceIcon";
 
@@ -24,7 +25,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
         className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-900 transition group-hover:text-gold-500"
       >
         Saiba mais
-        <span aria-hidden>→</span>
+        <ArrowRight className="h-4 w-4" aria-hidden />
       </Link>
     </article>
   );

@@ -21,9 +21,9 @@ export default function ContatoPage() {
     <>
       <InternalHero
         title="Solicite sua cotação"
-        subtitle="Preencha o formulário com os dados da missão ou fale com a equipe da Good Fly no WhatsApp para atendimento imediato."
-        image="/images/hero-jato-executivo.jpg"
-        imageAlt="Jato executivo em cenário premium para contato comercial"
+        subtitle="Preencha o formulário com os dados da missão ou fale com a equipe da Good Fly no WhatsApp."
+        image="/images/aeronaves/helicopteros/helicoptero-bell-429-img-3.jpg"
+        imageAlt="Helicóptero executivo em destaque para contato comercial"
         breadcrumbItems={[
           { label: "Início", href: "/" },
           { label: "Contato" }
@@ -36,14 +36,19 @@ export default function ContatoPage() {
             <div className="space-y-6">
               <SectionTitle
                 eyebrow="Canais diretos"
-                title="Atendimento consultivo e responsivo"
-                description="A melhor forma de acelerar uma cotação é enviar dados claros sobre rota, urgência e perfil da missão."
+                title="Fale com a Good Fly"
+                description="Envie os dados da rota, urgência e perfil da missão para agilizar a cotação."
               />
               <ContactCard
                 icon={<MessageCircleMore className="h-5 w-5" />}
                 title="WhatsApp 24 horas"
               >
-                <a href={siteConfig.whatsappHref} target="_blank" rel="noreferrer" className="font-semibold text-brand-900">
+                <a
+                  href={siteConfig.whatsappHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-semibold text-brand-900"
+                >
                   {siteConfig.whatsappDisplay}
                 </a>
               </ContactCard>

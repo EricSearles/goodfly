@@ -314,7 +314,12 @@ const airplanes: Aircraft[] = [
     name: "Legacy 650",
     description:
       "Jato com cabine ampla para voos executivos e traslados sob demanda.",
-    images: buildAircraftImages("avioes", "jato-legacy-650", 4),
+    images: [
+      "/images/aeronaves/avioes/avioes-jato-legacy-650-img-1.jpg",
+      "/images/aeronaves/avioes/avioes-jato-legacy-650-img-2.jpg",
+      "/images/aeronaves/avioes/avioes-jato-legacy-650-img-5.jpg",
+      "/images/aeronaves/avioes/avioes-jato-legacy-650-img-6.jpg"
+    ],
     useCases: ["Cabine ampla", "Executivo premium", "Viagem corporativa"]
   }),
   createAircraft({

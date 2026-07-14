@@ -1,19 +1,38 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+  type AircraftCategory,
   aircraftCategoryBadgeLabels,
   aircraftCategoryMeta,
   getAircraftByCategory,
-  getAircraftCategories
+  getAircraftCategories,
+  getAircraftBySlug
 } from "@/data/aircraft";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 
+const featuredAircraftSlugs: Partial<Record<AircraftCategory, string[]>> = {
+  avioes: ["bandeirante", "global-express", "citation-bravo"]
+};
+
+function getFeaturedAircraft(category: AircraftCategory) {
+  const featuredSlugs = featuredAircraftSlugs[category];
+
+  if (!featuredSlugs) {
+    return getAircraftByCategory(category).slice(0, 3);
+  }
+
+  return featuredSlugs.flatMap((slug) => {
+    const aircraft = getAircraftBySlug(category, slug);
+    return aircraft ? [aircraft] : [];
+  });
+}
+
 const featuredAircraftByCategory = getAircraftCategories().map((category) => ({
   category,
   meta: aircraftCategoryMeta[category],
-  items: getAircraftByCategory(category).slice(0, 3)
+  items: getFeaturedAircraft(category)
 }));
 
 export function VisualAircraftShowcase() {
@@ -112,3 +131,4 @@ export function VisualAircraftShowcase() {
     </section>
   );
 }
+

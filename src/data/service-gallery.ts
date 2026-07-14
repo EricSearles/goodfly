@@ -38,7 +38,7 @@ export const serviceGalleryBySlug: Record<string, ServiceGalleryImage[]> = {
       alt: "Interior de UTI móvel aérea com estrutura clínica embarcada"
     },
     {
-      src: "/images/aeronaves/avioes/uti-aerea (1).jpeg",
+      src: "/images/aeronaves/avioes/uti-aerea-nova-img-.jpg",
       alt: "Aeronave aeromédica pronta para missão urgente"
     },
     {
@@ -48,7 +48,7 @@ export const serviceGalleryBySlug: Record<string, ServiceGalleryImage[]> = {
   ],
   "transporte-de-orgaos": [
     {
-      src: "/images/aeronaves/avioes/uti-aerea (1).jpeg",
+      src: "/images/aeronaves/avioes/uti-aerea-nova-img-.jpg",
       alt: "Aeronave dedicada a missões urgentes de transporte aéreo"
     },
     {
@@ -217,3 +217,4 @@ export const relatedServiceSlugsBySlug: Record<string, string[]> = {
     "helicopteros"
   ]
 };
+

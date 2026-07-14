@@ -294,7 +294,7 @@ export const services: ServiceContent[] = [
     seoDescription:
       "Coordenação de transporte aéreo de órgãos, equipes médicas e materiais sensíveis com atendimento 24 horas em todo o Brasil.",
     keywords: ["Transporte de órgãos", "Logística aérea", "UTI aérea"],
-    heroImage: "/images/aeronaves/avioes/uti-aerea (1).jpeg",
+    heroImage: "/images/aeronaves/avioes/uti-aerea-nova-img-.jpg",
     heroAlt: "Aeronave dedicada a missões urgentes de transporte aéreo",
     benefits: [
       {
@@ -926,3 +926,4 @@ export const homeServiceSlugs = [
   "compra-e-venda-de-aeronaves",
   "gestao-de-aeronaves"
 ];
+

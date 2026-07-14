@@ -42,7 +42,7 @@ export const serviceGalleryBySlug: Record<string, ServiceGalleryImage[]> = {
       alt: "Aeronave aeromédica pronta para missão urgente"
     },
     {
-      src: "/images/aeronaves/helicopteros/helicoptero-grand-augusta-aw-139-img-4.jpg",
+      src: "/images/aeronaves/avioes/uti-movel-aerea-1.png",
       alt: "Operação aérea com perfil de resposta rápida"
     }
   ],
@@ -66,25 +66,25 @@ export const serviceGalleryBySlug: Record<string, ServiceGalleryImage[]> = {
       alt: "Cabine configurada para translado funerário aéreo"
     },
     {
-      src: "/images/aeronaves/avioes/avioes-king-air-B200-img2.jpg",
+      src: "/images/aeronaves/avioes/traslado-funerario-aereo-1.png",
       alt: "Aeronave com perfil adequado para translado aéreo"
     },
     {
-      src: "/images/aeronaves/avioes/avioes-king-air-B300-img1.jpg",
+      src: "/images/aeronaves/avioes/traslado-funerario-aereo-2.jpg",
       alt: "Solução aérea com coordenação discreta e organizada"
     }
   ],
   "aviacao-agricola": [
     {
-      src: "/images/aeronaves/avioes/avioes-grand-caravan-img-3.jpg",
+      src: "/images/aeronaves/avioes/aviacao-agricola-1.jpg",
       alt: "Aeronave para apoio em operações agrícolas"
     },
     {
-      src: "/images/aeronaves/avioes/avioes-bandeirante-img-2.jpg",
+      src: "/images/aeronaves/avioes/aviacao-agricola-2.jpg",
       alt: "Solução aérea para cobertura de áreas amplas"
     },
     {
-      src: "/images/aeronaves/avioes/avioes-grand-caravan-img-4.jpg",
+      src: "/images/aeronaves/avioes/aviacao-agricola-3.jpg",
       alt: "Aeronave em operação com foco em produtividade no campo"
     }
   ],

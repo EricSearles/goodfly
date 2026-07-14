@@ -19,7 +19,7 @@ export function Logo({ light = false, compact = false, href = "/" }: LogoProps) 
         )}
       >
         <Image
-          src="/images/logo-goodfly.jpeg"
+          src="/images/logo-goodfly-1.jpeg"
           alt="Good Fly Aviação Executiva"
           fill
           priority

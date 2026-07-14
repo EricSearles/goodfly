@@ -126,7 +126,7 @@ export const serviceGalleryBySlug: Record<string, ServiceGalleryImage[]> = {
       alt: "Modelo executivo para aproveitamento estruturado do ativo"
     },
     {
-      src: "/images/aeronaves/avioes/avioes-jato-legacy-650-img-3.jpg",
+      src: "/images/aeronaves/avioes/avioes-jato-legacy-650-img-5.jpg",
       alt: "Aeronave com foco em acompanhamento profissional"
     }
   ],

@@ -372,8 +372,8 @@ export const services: ServiceContent[] = [
     seoDescription:
       "Solicite translado funerário aéreo, transporte aéreo de esquife e coordenação logística com atendimento 24 horas e suporte humanizado.",
     keywords: ["Translado funerário aéreo", "Esquife", "Logística aérea"],
-    heroImage: "/images/aeronaves/avioes/uti-aerea (2).jpeg",
-    heroAlt: "Cabine configurada para translado funerário aéreo",
+    heroImage: "/images/aeronaves/avioes/traslado-funerario-aereo-2.jpg",
+    heroAlt: "Aeronave preparada para translado funerário aéreo",
     benefits: [
       {
         title: "Atendimento humanizado",
@@ -449,8 +449,8 @@ export const services: ServiceContent[] = [
     seoDescription:
       "Soluções de aviação agrícola e pulverização aérea sob demanda com atendimento consultivo, disponibilidade operacional e cobertura nacional.",
     keywords: ["Aviação agrícola", "Pulverização aérea", "Logística aérea"],
-    heroImage: "/images/aeronaves/avioes/avioes-grand-caravan-img-1.jpg",
-    heroAlt: "Aeronave Grand Caravan em destaque",
+    heroImage: "/images/aeronaves/avioes/aviacao-agricola-1.jpg",
+    heroAlt: "Aeronave agrícola em operação sobre lavoura",
     benefits: [
       {
         title: "Alcance operacional",

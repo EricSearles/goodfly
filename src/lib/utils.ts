@@ -1,4 +1,4 @@
-import { siteConfig } from "@/lib/site";
+﻿import { siteConfig } from "@/lib/site";
 
 export function cn(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
@@ -9,7 +9,7 @@ export function absoluteUrl(path = "/") {
 }
 
 export function buildWhatsAppUrl(message: string) {
-  return `${siteConfig.whatsappHref}?text=${encodeURIComponent(message)}`;
+  return `${siteConfig.whatsappNumberHref}?text=${encodeURIComponent(message)}`;
 }
 
 export function buildQuoteMessage(fields: Record<string, string>) {

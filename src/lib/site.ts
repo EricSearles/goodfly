@@ -1,3 +1,8 @@
+﻿const whatsappBaseMessage =
+  "Olá, vim pelo Google e gostaria de uma cotação com a Goodfly, é possível?";
+
+const whatsappNumberHref = "https://wa.me/5511931111111";
+
 export const siteConfig = {
   name: "Good Fly Aviação Executiva",
   shortName: "Good Fly",
@@ -7,9 +12,9 @@ export const siteConfig = {
     "Site institucional da Good Fly para agenciamento de voos executivos, táxi aéreo, UTI aérea, transporte de órgãos e soluções aéreas especiais com atendimento 24 horas em todo o Brasil.",
   url: "https://www.goodfly.com.br",
   whatsappDisplay: "11 93111-1111",
-  whatsappHref: "https://wa.me/5511931111111",
-  whatsappBaseMessage:
-    "Olá, gostaria de solicitar uma cotação com a Good Fly.",
+  whatsappNumberHref,
+  whatsappHref: `${whatsappNumberHref}?text=${encodeURIComponent(whatsappBaseMessage)}`,
+  whatsappBaseMessage,
   email: "contato@goodfly.com.br",
   serviceArea: "Atendimento 24 horas em todo o Brasil",
   foundedRegion: "Brasil"

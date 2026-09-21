@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Clock3, Mail, MessageCircleMore } from "lucide-react";
+import { Clock3, Mail, MapPin, MessageCircleMore } from "lucide-react";
 import { InternalHero } from "@/components/sections/InternalHero";
 import { QuoteForm } from "@/components/sections/QuoteForm";
 import { ContactCard } from "@/components/ui/ContactCard";
@@ -56,6 +56,15 @@ export default function ContatoPage() {
                 <a href={`mailto:${siteConfig.email}`} className="font-semibold text-brand-900">
                   {siteConfig.email}
                 </a>
+              </ContactCard>
+              <ContactCard icon={<MapPin className="h-5 w-5" />} title="Endereço">
+                <address className="not-italic">
+                  {siteConfig.address.street}
+                  <br />
+                  Bairro {siteConfig.address.neighborhood} - {siteConfig.address.state}
+                  <br />
+                  CEP: {siteConfig.address.postalCode}
+                </address>
               </ContactCard>
               <ContactCard icon={<Clock3 className="h-5 w-5" />} title="Janela de atendimento">
                 Atendimento 24 horas para voos executivos, remoções aeromédicas,

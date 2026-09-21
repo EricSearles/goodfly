@@ -14,6 +14,14 @@ export function getOrganizationJsonLd() {
     url: siteConfig.url,
     email: siteConfig.email,
     telephone: siteConfig.whatsappDisplay,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: `${siteConfig.address.street} - Bairro ${siteConfig.address.neighborhood}`,
+      addressLocality: siteConfig.address.city,
+      addressRegion: siteConfig.address.state,
+      postalCode: siteConfig.address.postalCode,
+      addressCountry: siteConfig.address.country
+    },
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",

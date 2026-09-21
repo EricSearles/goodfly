@@ -37,6 +37,13 @@ export function Footer() {
             <div className="mt-5 space-y-3 text-sm leading-7 text-white/76">
               <p>WhatsApp: {siteConfig.whatsappDisplay}</p>
               <p>E-mail: {siteConfig.email}</p>
+              <address className="not-italic">
+                {siteConfig.address.street}
+                <br />
+                Bairro {siteConfig.address.neighborhood} - {siteConfig.address.state}
+                <br />
+                CEP: {siteConfig.address.postalCode}
+              </address>
               <p>{siteConfig.serviceArea}</p>
             </div>
           </div>

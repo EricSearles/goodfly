@@ -16,6 +16,14 @@ export const siteConfig = {
   whatsappHref: `${whatsappNumberHref}?text=${encodeURIComponent(whatsappBaseMessage)}`,
   whatsappBaseMessage,
   email: "contato@goodfly.com.br",
+  address: {
+    street: "Av. Olavo Fontoura, 484",
+    neighborhood: "Santana",
+    city: "São Paulo",
+    state: "SP",
+    postalCode: "02012-020",
+    country: "BR"
+  },
   serviceArea: "Atendimento 24 horas em todo o Brasil",
   foundedRegion: "Brasil"
 };
